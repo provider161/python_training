@@ -1,7 +1,10 @@
 # -*- coding: utf-8 -*-
-from selenium.webdriver.firefox.webdriver import WebDriver
 import unittest
-from contact import Contact
+
+from selenium.webdriver.firefox.webdriver import WebDriver
+
+from models.contact import Contact
+
 
 def is_alert_present(wd):
     try:
@@ -11,14 +14,17 @@ def is_alert_present(wd):
         return False
 
 class test_add_contact(unittest.TestCase):
+
     def setUp(self):
         self.wd = WebDriver()
         self.wd.implicitly_wait(60)
 
-    def logout(self, wd):
+    def logout(self):
+        wd = self.wd
         wd.find_element_by_link_text("Logout").click()
 
-    def new_contact_creation(self, wd, Contact):
+    def new_contact_creation(self, Contact):
+        wd = self.wd
         # filling firstname
         wd.find_element_by_name("firstname").click()
         wd.find_element_by_name("firstname").clear()
@@ -110,10 +116,12 @@ class test_add_contact(unittest.TestCase):
         # submit form
         wd.find_element_by_xpath("//div[@id='content']/form/input[21]").click()
 
-    def add_contact_page(self, wd):
+    def add_contact_page(self):
+        wd = self.wd
         wd.find_element_by_link_text("add new").click()
 
-    def login(self, wd, username, password):
+    def login(self, username, password):
+        wd = self.wd
         wd.find_element_by_name("user").click()
         wd.find_element_by_name("user").clear()
         wd.find_element_by_name("user").send_keys(username)
@@ -122,16 +130,16 @@ class test_add_contact(unittest.TestCase):
         wd.find_element_by_name("pass").send_keys(password)
         wd.find_element_by_xpath("//form[@id='LoginForm']/input[3]").click()
 
-    def open_home_page(self, wd):
+    def open_home_page(self):
+        wd = self.wd
         wd.get("http://localhost:8888/addressbook/index.php")
     
     def test_test_add_contact(self):
-        wd = self.wd
-        self.open_home_page(wd)
-        self.login(wd, username = "admin", password = "secret")
-        self.add_contact_page(wd)
-        self.new_contact_creation(wd, Contact(firstname = 'qwer', middlename = 'qwer', lastname = 'wert', nickname = 'asd', title = 'fsdf', company = 'fsd', address = 'dfsdf', home = 'df', mobile = '2312', work = '2342', fax = '23213', email = 'fsfsd@dfd.ru', email2= 'sdfsd@dfs.sd', email3 = 'efsf@sdfsd.asd', homepage= 'sfsdfs.sdf', byear = '1900', ayear = '2000', address2 = 'sdfsdfsd', phone2= '233534', notes = 'dfsdf'))
-        self.logout(wd)
+        self.open_home_page()
+        self.login(username = "admin", password = "secret")
+        self.add_contact_page()
+        self.new_contact_creation(Contact(firstname = 'qwer', middlename = 'qwer', lastname = 'wert', nickname = 'asd', title = 'fsdf', company = 'fsd', address = 'dfsdf', home = 'df', mobile = '2312', work = '2342', fax = '23213', email = 'fsfsd@dfd.ru', email2= 'sdfsd@dfs.sd', email3 = 'efsf@sdfsd.asd', homepage= 'sfsdfs.sdf', byear = '1900', ayear = '2000', address2 = 'sdfsdfsd', phone2= '233534', notes = 'dfsdf'))
+        self.logout()
 
     def tearDown(self):
         self.wd.quit()
