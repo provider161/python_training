@@ -99,3 +99,22 @@ class ContactHelper:
         wd.find_element_by_name("notes").send_keys(Contact.notes)
         # submit form
         wd.find_element_by_xpath("//div[@id='content']/form/input[21]").click()
+
+    def modify_first(self):
+        wd = self.app.wd
+        # select contact
+        if not wd.find_element_by_name("selected[]").is_selected():
+            wd.find_element_by_name("selected[]").click()
+        # edit contact
+        wd.find_element_by_xpath("//table[@id='maintable']/tbody/tr[2]/td[8]/a/img").click()
+
+    def delete_first(self):
+        wd = self.app.wd
+        # select contact
+        if not wd.find_element_by_name("selected[]").is_selected():
+            wd.find_element_by_name("selected[]").click()
+        # submit deletion
+        wd.find_element_by_xpath("//div[1]/div[4]/form[2]/div[2]/input").click()
+        # accept deletion
+        wd.switch_to_alert().accept()
+
