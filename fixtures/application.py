@@ -11,6 +11,7 @@ class Application:
         self.session = SessionHelper(self)
         self.group = GroupHelper(self)
         self.contact = ContactHelper(self)
+        self.wd.get("http://localhost:8888/addressbook/index.php")
 
     def open_homepage(self):
         wd = self.wd
