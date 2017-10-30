@@ -22,7 +22,8 @@ class Application:
 
     def open_homepage(self):
         wd = self.wd
-        wd.get("http://localhost:8888/addressbook/index.php")
+        if not (wd.current_url.endswith("/index.php") and len(wd.find_elements_by_name("Logout")) > 0):
+            wd.get("http://localhost:8888/addressbook/index.php")
 
     def destroy(self):
         self.wd.quit()
