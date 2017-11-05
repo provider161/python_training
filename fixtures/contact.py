@@ -101,23 +101,31 @@ class ContactHelper:
         wd.find_element_by_name("notes").clear()
         wd.find_element_by_name("notes").send_keys(Contact.notes)
         # submit form
-        wd.find_element_by_xpath("//div[@id='content']/form/input[21]").click()
+        if wd.find_element_by_xpath("//div[@id='content']/form[1]/input[21]"):
+            wd.find_element_by_xpath("//div[@id='content']/form[1]/input[21]").click()
+        else:
+            wd.find_element_by_xpath("//div[@id='content']/form[1]/input[22]").click()
         self.contact_cache = None
 
     def modify_first(self):
+        self.modify_by_index(0)
+
+    def modify_by_index(self, index):
         wd = self.app.wd
         # select contact
-        if not wd.find_element_by_name("selected[]").is_selected():
-            wd.find_element_by_name("selected[]").click()
+        if not wd.find_elements_by_name("selected[]")[index].is_selected():
+            wd.find_elements_by_name("selected[]")[index].click()
         # edit contact
         wd.find_element_by_xpath("//table[@id='maintable']/tbody/tr[2]/td[8]/a/img").click()
-        self.contact_cache = None
 
     def delete_first(self):
+        self.delete_by_index(0)
+
+    def delete_by_index(self, index):
         wd = self.app.wd
         # select contact
-        if not wd.find_element_by_name("selected[]").is_selected():
-            wd.find_element_by_name("selected[]").click()
+        if not wd.find_elements_by_name("selected[]")[index].is_selected():
+            wd.find_elements_by_name("selected[]")[index].click()
         # submit deletion
         wd.find_element_by_xpath("//div/div[4]/form[2]/div[2]/input").click()
         # accept deletion
