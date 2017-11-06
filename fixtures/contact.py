@@ -101,8 +101,8 @@ class ContactHelper:
         wd.find_element_by_name("notes").clear()
         wd.find_element_by_name("notes").send_keys(Contact.notes)
         # submit form
-        if wd.find_element_by_xpath("//div[@id='content']/form[1]/input[21]"):
-            wd.find_element_by_xpath("//div[@id='content']/form[1]/input[21]").click()
+        if wd.find_element_by_xpath("//div[@id='content']/form/input[21]"):
+            wd.find_element_by_xpath("//div[@id='content']/form/input[21]").click()
         else:
             wd.find_element_by_xpath("//div[@id='content']/form[1]/input[22]").click()
         self.contact_cache = None
@@ -116,7 +116,11 @@ class ContactHelper:
         if not wd.find_elements_by_name("selected[]")[index].is_selected():
             wd.find_elements_by_name("selected[]")[index].click()
         # edit contact
-        wd.find_element_by_xpath("//table[@id='maintable']/tbody/tr[2]/td[8]/a/img").click()
+        button_number = index+1
+        path = "//table[@id='maintable']/tbody/tr[%s]/td[8]/a/img" % button_number
+        button = wd.find_element_by_xpath(path)
+        button.click()
+        self.contact_cache = None
 
     def delete_first(self):
         self.delete_by_index(0)
