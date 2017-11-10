@@ -1,17 +1,27 @@
-from selenium.webdriver.firefox.webdriver import WebDriver
+from selenium import webdriver
 from fixtures.session import SessionHelper
 from fixtures.group import GroupHelper
 from fixtures.contact import ContactHelper
 
 class Application:
 
-    def __init__(self):
-        self.wd = WebDriver(capabilities={"marionette": False})
+    def __init__(self, browser, base_url):
         #self.wd.implicitly_wait(5)
+        if browser == "firefox":
+            self.wd = webdriver.Firefox(capabilities={"marionette": False})
+        elif browser == "chrome":
+            self.wd = webdriver.Chrome()
+        elif browser == "ie":
+            self.wd = webdriver.Ie()
+        elif browser == "safari":
+            self.wd = webdriver.Safari()
+        else:
+            raise ValueError("Unrecognized browser '%s'" % browser)
         self.session = SessionHelper(self)
         self.group = GroupHelper(self)
         self.contact = ContactHelper(self)
-        self.wd.get("http://localhost:8888/addressbook/index.php")
+        self.base_url = base_url
+        self.wd.get(self.base_url)
 
     def is_valid(self):
         try:
@@ -23,7 +33,7 @@ class Application:
     def open_homepage(self):
         wd = self.wd
         if not (wd.current_url.endswith("/index.php") and len(wd.find_elements_by_name("searchstring")) > 0):
-            wd.get("http://localhost:8888/addressbook/index.php")
+            wd.get(self.base_url)
 
     def destroy(self):
         self.wd.quit()
