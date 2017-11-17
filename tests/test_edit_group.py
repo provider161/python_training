@@ -2,7 +2,6 @@
 from models.Group import Group
 from random import randrange
 
-
 def test_edit_group_name(app):
     app.group.open_groups_page()
     if app.group.count() == 0:
