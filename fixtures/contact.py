@@ -122,6 +122,14 @@ class ContactHelper:
         button.click()
         self.contact_cache = None
 
+    def modify_by_id(self, id):
+        wd = self.app.wd
+        #button_number = index+2
+        #path = "//table[@id='maintable']/tbody/tr[%s]/td[8]/a/img" % button_number
+        button = wd.find_element_by_css_selector("a[href='edit.php?id=%s']" % id)
+        button.click()
+        self.contact_cache = None
+
     def delete_first(self):
         self.delete_by_index(0)
 
@@ -130,6 +138,17 @@ class ContactHelper:
         # select contact
         if not wd.find_elements_by_name("selected[]")[index].is_selected():
             wd.find_elements_by_name("selected[]")[index].click()
+        # submit deletion
+        wd.find_element_by_xpath("//div/div[4]/form[2]/div[2]/input").click()
+        # accept deletion
+        wd.switch_to_alert().accept()
+        self.contact_cache = None
+
+    def delete_by_id(self, id):
+        wd = self.app.wd
+        # select contact
+        if not wd.find_element_by_css_selector("input[value='%s']" % id).is_selected():
+            wd.find_element_by_css_selector("input[value='%s']" % id).click()
         # submit deletion
         wd.find_element_by_xpath("//div/div[4]/form[2]/div[2]/input").click()
         # accept deletion
