@@ -184,6 +184,41 @@ class ContactHelper:
                                                   all_phones_from_homepage=all_phones, all_emails_from_homepage=all_emails))
         return list(self.contact_cache)
 
+    def get_contacts_phones(self):
+        if self.contact_cache is None:
+            wd = self.app.wd
+            self.contact_cache = []
+            for element in wd.find_elements_by_name("entry"):
+                id = element.find_element_by_name("selected[]").get_attribute("value")
+                cells = element.find_elements_by_tag_name("td")
+                all_phones = cells[5].text
+                self.contact_cache.append(Contact(id=id, all_phones_from_homepage=all_phones))
+        return list(self.contact_cache)
+
+    def get_contacts_emails(self):
+        if self.contact_cache is None:
+            wd = self.app.wd
+            self.contact_cache = []
+            for element in wd.find_elements_by_name("entry"):
+                id = element.find_element_by_name("selected[]").get_attribute("value")
+                cells = element.find_elements_by_tag_name("td")
+                all_emails = cells[4].text
+                self.contact_cache.append(Contact(id=id, all_emails_from_homepage=all_emails))
+        return list(self.contact_cache)
+
+    def get_contacts_names_and_address(self):
+        if self.contact_cache is None:
+            wd = self.app.wd
+            self.contact_cache = []
+            for element in wd.find_elements_by_name("entry"):
+                id = element.find_element_by_name("selected[]").get_attribute("value")
+                cells = element.find_elements_by_tag_name("td")
+                last_name = cells[1].text
+                first_name = cells[2].text
+                address = cells[3].text
+                self.contact_cache.append(Contact(id=id, lastname=last_name, firstname=first_name, address=address))
+        return list(self.contact_cache)
+
     def get_contact_info_from_editpage(self, index):
         wd = self.app.wd
         self.modify_by_index(index)
