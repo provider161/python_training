@@ -1,4 +1,5 @@
 from models.contact import Contact
+import random
 import re
 
 class ContactHelper:
@@ -103,6 +104,10 @@ class ContactHelper:
         wd.find_element_by_name("notes").send_keys(Contact.notes)
         self.contact_cache = None
 
+    def select_group(self, group):
+        wd = self.app.wd
+        wd.find_element_by_xpath("//div[@id='content']/form/select[5]//option[@value='%s']" % group.id).click()
+
     def submit_contact_creation(self):
         wd = self.app.wd
         wd.find_element_by_xpath("//div[@id='content']/form/input[21]").click()
@@ -124,8 +129,6 @@ class ContactHelper:
 
     def modify_by_id(self, id):
         wd = self.app.wd
-        #button_number = index+2
-        #path = "//table[@id='maintable']/tbody/tr[%s]/td[8]/a/img" % button_number
         button = wd.find_element_by_css_selector("a[href='edit.php?id=%s']" % id)
         button.click()
         self.contact_cache = None
