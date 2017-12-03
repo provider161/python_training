@@ -31,7 +31,7 @@ class ORMFixture:
         conv = encoders
         conv.update(decoders)
         conv[datetime] = convert_mysql_timestamp
-        self.db.bind('mysql', host=host, database=name, user=user, password=password, port=port, conv=conv)
+        self.db.bind('mysql', host=host, database=name, user=user, password=password, port=port, conv=conv,  autocommit=True)
         self.db.generate_mapping()
         sql_debug(True)
 

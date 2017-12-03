@@ -133,6 +133,15 @@ class ContactHelper:
         button.click()
         self.contact_cache = None
 
+    def select_by_id(self, contact):
+        wd = self.app.wd
+        wd.find_element_by_id("%s" % contact.id).click()
+
+    def move_to_group_by_group_id(self, group):
+        wd = self.app.wd
+        wd.find_element_by_xpath("//div[@class='right']//option[@value='%s']" % group.id).click()
+        wd.find_element_by_name("add").click()
+
     def delete_first(self):
         self.delete_by_index(0)
 

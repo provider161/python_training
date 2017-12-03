@@ -9,7 +9,7 @@ class DbFixture():
         self.user = user
         self.password = password
         self.port = port
-        self.connection = pymysql.connect(host=host, database=name, user=user, password=password, port=port)
+        self.connection = pymysql.connect(host=host, database=name, user=user, password=password, port=port, autocommit=True)
         self.connection.autocommit(True)
 
     def get_group_list(self):
@@ -32,6 +32,18 @@ class DbFixture():
             for row in cursor:
                 (id, firstname, lastname) = row
                 list.append(Contact(id=str(id), firstname=firstname, lastname=lastname))
+        finally:
+            cursor.close()
+        return list
+
+    def get_contacts_in_groups(self):
+        list = []
+        cursor = self.connection.cursor()
+        try:
+            cursor.execute("SELECT id, group_id FROM address_in_groups WHERE deprecated='0000-00-00 00:00:00'")
+            for row in cursor:
+                (id, group) = row
+                list.append(Contact(id=str(id), group=str(group)))
         finally:
             cursor.close()
         return list

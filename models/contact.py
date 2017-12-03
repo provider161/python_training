@@ -6,7 +6,7 @@ class Contact:
                  company = None, address = None, homephone = None, mobilephone = None, workphone = None,
                  fax = None, email = None, email2 = None, email3 = None, homepage = None, byear = None,
                  ayear = None, address2 = None, secondaryphone = None, notes = None, id = None,
-                 all_phones_from_homepage = None, all_emails_from_homepage = None):
+                 all_phones_from_homepage = None, all_emails_from_homepage = None, group= None):
         self.firstname = firstname
         self.middlename = middlename
         self.lastname = lastname
@@ -28,6 +28,7 @@ class Contact:
         self.secondaryphone = secondaryphone
         self.notes = notes
         self.id = id
+        self.group = group
         self.all_phones_from_homepage = all_phones_from_homepage
         self.all_emails_from_homepage = all_emails_from_homepage
 
