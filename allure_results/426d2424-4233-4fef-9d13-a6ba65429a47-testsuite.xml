@@ -1,0 +1,204 @@
+<ns0:test-suite xmlns:ns0="urn:model.allure.qatools.yandex.ru" start="1513504777643" stop="1513504793072">
+  <name>tests.test_add_group</name>
+  <labels/>
+  <test-cases>
+    <test-case start="1513504777643" status="passed" stop="1513504783855">
+      <name>test_add_group[None:::]</name>
+      <attachments>
+        <attachment source="bd547971-2ff2-4342-999e-2d4d6f67fdcc-attachment.txt" title="Captured stdout setup" type="text/plain"/>
+      </attachments>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="9954-MainThread"/>
+        <label name="host" value="MacBook-Air-Mihail.local"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps>
+        <step start="1513504782449" status="passed" stop="1513504782451">
+          <name>Given a group list</name>
+          <title>Given a group list</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1513504782451" status="passed" stop="1513504783588">
+          <name>When I add the group None::: to the list</name>
+          <title>When I add the group None::: to the list</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1513504783588" status="passed" stop="1513504783589">
+          <name>Then the new group list is equal to the old with added group</name>
+          <title>Then the new group list is equal to the old with added group</title>
+          <attachments/>
+          <steps/>
+        </step>
+      </steps>
+    </test-case>
+    <test-case start="1513504783856" status="passed" stop="1513504785707">
+      <name>test_add_group[None:name9".)p$:headerb`:footeroj.|LmZJ]</name>
+      <attachments>
+        <attachment source="221e9aa6-e4dc-4cbe-9de4-6a2a12fed55e-attachment.txt" title="Captured stdout setup" type="text/plain"/>
+      </attachments>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="9954-MainThread"/>
+        <label name="host" value="MacBook-Air-Mihail.local"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps>
+        <step start="1513504784315" status="passed" stop="1513504784317">
+          <name>Given a group list</name>
+          <title>Given a group list</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1513504784317" status="passed" stop="1513504785444">
+          <name>When I add the group None:name9"/)p$:headerb`:footeroj/|LmZJ to the list</name>
+          <title>When I add the group None:name9"/)p$:headerb`:footeroj/|LmZJ to the list</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1513504785444" status="passed" stop="1513504785446">
+          <name>Then the new group list is equal to the old with added group</name>
+          <title>Then the new group list is equal to the old with added group</title>
+          <attachments/>
+          <steps/>
+        </step>
+      </steps>
+    </test-case>
+    <test-case start="1513504785708" status="passed" stop="1513504787547">
+      <name>test_add_group[None:namep.k_Ol_b:header:footer^h= ]</name>
+      <attachments>
+        <attachment source="059f991c-7b16-422d-b6db-2027186c5a00-attachment.txt" title="Captured stdout setup" type="text/plain"/>
+      </attachments>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="9954-MainThread"/>
+        <label name="host" value="MacBook-Air-Mihail.local"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps>
+        <step start="1513504786086" status="passed" stop="1513504786088">
+          <name>Given a group list</name>
+          <title>Given a group list</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1513504786088" status="passed" stop="1513504787244">
+          <name>When I add the group None:namep/k_Ol_b:header:footer^h=  to the list</name>
+          <title>When I add the group None:namep/k_Ol_b:header:footer^h=  to the list</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1513504787244" status="passed" stop="1513504787246">
+          <name>Then the new group list is equal to the old with added group</name>
+          <title>Then the new group list is equal to the old with added group</title>
+          <attachments/>
+          <steps/>
+        </step>
+      </steps>
+    </test-case>
+    <test-case start="1513504787548" status="passed" stop="1513504789494">
+      <name>test_add_group[None:name e@O|:headerc!eR:footere@.Um kR]</name>
+      <attachments>
+        <attachment source="08138a7e-20c7-4cb5-aba6-1e1e53cd47ac-attachment.txt" title="Captured stdout setup" type="text/plain"/>
+      </attachments>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="9954-MainThread"/>
+        <label name="host" value="MacBook-Air-Mihail.local"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps>
+        <step start="1513504787970" status="passed" stop="1513504787972">
+          <name>Given a group list</name>
+          <title>Given a group list</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1513504787972" status="passed" stop="1513504789203">
+          <name>When I add the group None:name e@O|:headerc!eR:footere@.Um kR to the list</name>
+          <title>When I add the group None:name e@O|:headerc!eR:footere@.Um kR to the list</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1513504789203" status="passed" stop="1513504789205">
+          <name>Then the new group list is equal to the old with added group</name>
+          <title>Then the new group list is equal to the old with added group</title>
+          <attachments/>
+          <steps/>
+        </step>
+      </steps>
+    </test-case>
+    <test-case start="1513504789495" status="passed" stop="1513504791346">
+      <name>test_add_group[None:nameU % }:headery@ ?:footer ]</name>
+      <attachments>
+        <attachment source="02aade60-8cb1-494e-9b5e-bf27e5ddc37e-attachment.txt" title="Captured stdout setup" type="text/plain"/>
+      </attachments>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="9954-MainThread"/>
+        <label name="host" value="MacBook-Air-Mihail.local"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps>
+        <step start="1513504789938" status="passed" stop="1513504789939">
+          <name>Given a group list</name>
+          <title>Given a group list</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1513504789940" status="passed" stop="1513504791075">
+          <name>When I add the group None:nameU % }:headery@ ?:footer  to the list</name>
+          <title>When I add the group None:nameU % }:headery@ ?:footer  to the list</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1513504791075" status="passed" stop="1513504791077">
+          <name>Then the new group list is equal to the old with added group</name>
+          <title>Then the new group list is equal to the old with added group</title>
+          <attachments/>
+          <steps/>
+        </step>
+      </steps>
+    </test-case>
+    <test-case start="1513504791347" status="passed" stop="1513504793072">
+      <name>test_add_group[None:name9@m:header6:footerP%d ]</name>
+      <attachments>
+        <attachment source="3d8b823c-870f-456e-9335-f425cccd8ccc-attachment.txt" title="Captured stdout setup" type="text/plain"/>
+      </attachments>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="9954-MainThread"/>
+        <label name="host" value="MacBook-Air-Mihail.local"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps>
+        <step start="1513504791722" status="passed" stop="1513504791723">
+          <name>Given a group list</name>
+          <title>Given a group list</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1513504791723" status="passed" stop="1513504792795">
+          <name>When I add the group None:name9@m:header6:footerP%d  to the list</name>
+          <title>When I add the group None:name9@m:header6:footerP%d  to the list</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1513504792795" status="passed" stop="1513504792797">
+          <name>Then the new group list is equal to the old with added group</name>
+          <title>Then the new group list is equal to the old with added group</title>
+          <attachments/>
+          <steps/>
+        </step>
+      </steps>
+    </test-case>
+  </test-cases>
+</ns0:test-suite>

@@ -1,0 +1,128 @@
+{
+  "uid" : "5f0ec4920a1f8ebc",
+  "name" : "test_add_group[None:nameU % }:headery@ ?:footer ]",
+  "fullName" : "tests.test_add_group.test_add_group[None:nameU % }:headery@ ?:footer ]",
+  "historyId" : "1b8c8876abea1f221e551ee92269e6cc",
+  "time" : {
+    "start" : 1513504789495,
+    "stop" : 1513504791346,
+    "duration" : 1851
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "statusDetails" : {
+    "flaky" : false
+  },
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "Given a group list",
+      "time" : {
+        "start" : 1513504789938,
+        "stop" : 1513504789939,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "When I add the group None:nameU % }:headery@ ?:footer  to the list",
+      "time" : {
+        "start" : 1513504789940,
+        "stop" : 1513504791075,
+        "duration" : 1135
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "Then the new group list is equal to the old with added group",
+      "time" : {
+        "start" : 1513504791075,
+        "stop" : 1513504791077,
+        "duration" : 2
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    } ],
+    "attachments" : [ {
+      "uid" : "c69ef8822c6f8611",
+      "name" : "Captured stdout setup",
+      "source" : "c69ef8822c6f8611.txt",
+      "type" : "text/plain",
+      "size" : 102
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 3,
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "host",
+    "value" : "MacBook-Air-Mihail.local"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "severity",
+    "value" : "normal"
+  }, {
+    "name" : "thread",
+    "value" : "9954-MainThread"
+  }, {
+    "name" : "suite",
+    "value" : "tests.test_add_group"
+  }, {
+    "name" : "testClass",
+    "value" : "tests.test_add_group"
+  }, {
+    "name" : "testMethod",
+    "value" : "test_add_group[None:nameU % }:headery@ ?:footer ]"
+  }, {
+    "name" : "package",
+    "value" : "tests.test_add_group"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "5f0ec4920a1f8ebc.json",
+  "statusMessage" : {
+    "present" : false
+  },
+  "statusDetailsSafe" : {
+    "flaky" : false
+  },
+  "parameterValues" : [ ]
+}
